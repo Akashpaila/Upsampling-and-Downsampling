@@ -14,7 +14,6 @@ recordedAudio = getaudiodata(audioObj);
 
 audiowrite('Audio_Original.wav', recordedAudio, fs);
 
-% Plot Original Audio Segment
 t = linspace(0, 0.1, round(0.1 * fs));
 orig_segment = recordedAudio(1:length(t));
 
@@ -28,7 +27,7 @@ for i = 1:length(nBits_list)
 
     quant_segment = quantizedAudio(1:length(t));
 
-    % Plot both Original and Quantized
+    
     figure;
     plot(t, orig_segment, 'b', 'LineWidth', 1.5); hold on;
     plot(t, quant_segment, 'r', 'LineWidth', 1.5);
